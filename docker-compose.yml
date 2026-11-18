@@ -1,0 +1,15 @@
+﻿services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: verifinance-db
+    environment:
+      POSTGRES_USER: verifinance
+      POSTGRES_PASSWORD: verifinance_pw
+      POSTGRES_DB: verifinance
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
